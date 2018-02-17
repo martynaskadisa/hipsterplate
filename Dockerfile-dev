@@ -1,0 +1,14 @@
+# Use latest stable NodeJS image
+FROM node:9-alpine
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Set our environment variables
+ENV NODE_ENV=development \
+    PORT=3000
+
+EXPOSE 3000
+
+# CMD yarn start

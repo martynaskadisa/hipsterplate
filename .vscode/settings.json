@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "tslint.autoFixOnSave": true,
+  "editor.codeLens": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "debug.inlineValues": true
+}

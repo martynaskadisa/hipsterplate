@@ -1,0 +1,8 @@
+version: "2"
+
+options:
+  verbose: true
+syncs:
+  app-sync: # tip: add -sync and you keep consistent names as a convention
+    src: '.'
+    sync_excludes: ['node_modules', 'dist']
