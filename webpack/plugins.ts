@@ -1,7 +1,7 @@
 import * as AssetsPlugin from 'assets-webpack-plugin';
 import { CheckerPlugin } from 'awesome-typescript-loader';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as OfflinePlugin from 'offline-plugin/lib/index';
 import * as path from 'path';
 import * as webpack from 'webpack';
@@ -28,7 +28,10 @@ if (isProd) {
     }),
     new AssetsPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new ExtractTextPlugin('styles__[hash].css'),
+    new MiniCssExtractPlugin({
+      filename: '[name]__[hash].css',
+      chunkFilename: '[id]__[hash].css'
+    }),
     new HtmlWebpackPlugin({
       template: './src/client/index.ejs',
       minify: {
