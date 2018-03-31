@@ -1,5 +1,5 @@
 import { Options } from 'webpack';
-import { isProd, ROOT } from './utils';
+import { isProd } from './utils';
 
 const optimization: Options.Optimization = {
   minimize: isProd,

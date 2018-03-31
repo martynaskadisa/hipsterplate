@@ -2,11 +2,10 @@ import * as AssetsPlugin from 'assets-webpack-plugin';
 import { CheckerPlugin } from 'awesome-typescript-loader';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import * as OfflinePlugin from 'offline-plugin/lib/index';
 import * as path from 'path';
 import * as webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { isProd, ROOT } from './utils';
+import { isProd } from './utils';
 
 let plugins: any[];
 
@@ -38,11 +37,6 @@ if (isProd) {
         collapseWhitespace: true
       }
     })
-    // new OfflinePlugin({
-    //   caches: 'all',
-    //   responseStrategy: 'cache-first',
-    //   updateStrategy: 'changed'
-    // })
   ];
 } else {
   plugins = [
@@ -67,11 +61,6 @@ if (isProd) {
     new HtmlWebpackPlugin({
       template: './src/client/index.ejs'
     })
-    // new OfflinePlugin({
-    //   caches: 'all',
-    //   responseStrategy: 'cache-first',
-    //   updateStrategy: 'changed'
-    // })
   ];
 }
 
