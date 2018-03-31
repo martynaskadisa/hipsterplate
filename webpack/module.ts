@@ -28,9 +28,11 @@ const scssLoader: Rule = {
           camelCase: false,
           importLoaders: 2
         }
-      }, {
+      },
+      {
         loader: 'postcss-loader'
-      }, {
+      },
+      {
         loader: 'sass-loader'
       }
     ]
@@ -39,39 +41,38 @@ const scssLoader: Rule = {
 
 const scssLoaderDev: Rule = {
   test: /\.s?css$/,
-  use: [{
-    loader: 'style-loader'
-  }, {
-    loader: 'css-loader',
-    options: {
-      modules: true,
-      localIdentName: '[local]--[hash:base64:5]',
-      minimize: true,
-      camelCase: false,
-      importLoaders: 2
+  use: [
+    {
+      loader: 'style-loader'
+    },
+    {
+      loader: 'css-loader',
+      options: {
+        modules: true,
+        localIdentName: '[local]--[hash:base64:5]',
+        minimize: true,
+        camelCase: false,
+        importLoaders: 2
+      }
+    },
+    {
+      loader: 'postcss-loader'
+    },
+    {
+      loader: 'sass-loader'
     }
-  }, {
-    loader: 'postcss-loader'
-  }, {
-    loader: 'sass-loader'
-  }]
+  ]
 };
 
 let webpackmodule: Module;
 
 if (isProd) {
   webpackmodule = {
-    rules: [
-      tsLoader,
-      scssLoader
-    ]
+    rules: [tsLoader, scssLoader]
   };
 } else {
   webpackmodule = {
-    rules: [
-      tsLoaderDev,
-      scssLoaderDev
-    ]
+    rules: [tsLoaderDev, scssLoaderDev]
   };
 }
 

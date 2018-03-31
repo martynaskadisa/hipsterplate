@@ -11,6 +11,7 @@ import resolve from './resolve';
 import { isProd, ROOT } from './utils';
 
 const config: webpack.Configuration = {
+  mode: isProd ? 'production' : 'development',
   context: ROOT,
   entry,
   output,

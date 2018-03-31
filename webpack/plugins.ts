@@ -31,10 +31,6 @@ if (isProd) {
       )
     }),
     new AssetsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor__[chunkhash].js'
-    }),
     new webpack.optimize.UglifyJsPlugin({
       comments: false,
       sourceMap: true
