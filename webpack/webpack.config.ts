@@ -5,6 +5,7 @@ dotenv.config();
 import * as webpack from 'webpack';
 import entry from './entry';
 import module from './module';
+import optimization from './optimization';
 import output from './output';
 import plugins from './plugins';
 import resolve from './resolve';
@@ -15,6 +16,7 @@ const config: webpack.Configuration = {
   context: ROOT,
   entry,
   output,
+  optimization,
   module,
   plugins,
   resolve,

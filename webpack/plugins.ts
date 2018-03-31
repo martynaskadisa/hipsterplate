@@ -27,10 +27,6 @@ if (isProd) {
       )
     }),
     new AssetsPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      sourceMap: true
-    }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin('styles__[hash].css'),
     new HtmlWebpackPlugin({
@@ -38,12 +34,12 @@ if (isProd) {
       minify: {
         collapseWhitespace: true
       }
-    }),
-    new OfflinePlugin({
-      caches: 'all',
-      responseStrategy: 'cache-first',
-      updateStrategy: 'changed'
     })
+    // new OfflinePlugin({
+    //   caches: 'all',
+    //   responseStrategy: 'cache-first',
+    //   updateStrategy: 'changed'
+    // })
   ];
 } else {
   plugins = [
