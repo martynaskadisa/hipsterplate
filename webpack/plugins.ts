@@ -13,10 +13,6 @@ let plugins: any[];
 if (isProd) {
   plugins = [
     new webpack.DefinePlugin({
-      /**
-       * Needed in order to use minified version of React
-       */
-      'process.env.NODE_ENV': JSON.stringify('production'),
       __PROD__: JSON.stringify(true),
       __DEVTOOLS__: JSON.stringify(
         process.env.IS_REDUX_DEVTOOLS_ENABLED === 'true'
@@ -52,7 +48,7 @@ if (isProd) {
 } else {
   plugins = [
     new webpack.DefinePlugin({
-      __PROD__: JSON.stringify(process.env.NODE_ENV === 'production'),
+      __PROD__: JSON.stringify(false),
       __DEVTOOLS__: JSON.stringify(
         process.env.IS_REDUX_DEVTOOLS_ENABLED === 'true'
       ),
